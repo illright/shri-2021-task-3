@@ -76,7 +76,7 @@ document
   .addEventListener('click', () => dispatch(actionPrev()));
 document
   .querySelector<HTMLDivElement>('.next')
-  .addEventListener('click', () => dispatch(actionPrev()));
+  .addEventListener('click', () => dispatch(actionNext()));
 document
   .querySelector<HTMLDivElement>('.restart')
   .addEventListener('click', () => dispatch(actionRestart()));
