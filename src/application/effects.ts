@@ -14,24 +14,42 @@ import type { Action } from './actions';
 import { DELAY, INTERVAL } from './types';
 import type { Slide, State } from './types';
 
+/** Filter that only passes through actions of the provided type. */
 export function ofType<T extends Action>(
   type: Action['type']
 ): MonoTypeOperatorFunction<T> {
   return filter((a) => type === a.type);
 }
 
+/**
+ * Creates a combined observable that emits the following events:
+ *  - a "timer" action every `INTERVAL` ms;
+ *  - a "next" action every `DELAY` ms, clocked with the previous timer;
+ *  - any action on demand in response to "message" actions dispatched externally.
+ */
 export function createEffects(
   actions$: Observable<Action>,
   state$: Observable<State>
 ): Observable<Action> {
+  /** Produces a "timer" action every `INTERVAL` ms. */
   const timerEffect$ = interval(INTERVAL).pipe(mapTo(actionTimer()));
 
+  /**
+   * Produces a "next" action every `INTERVAL` ms,
+   * provided the current progress is at least `DELAY` ms.
+   *
+   * Only outputs 5 of such events.
+   */
   const changeSlideEffect$ = timerEffect$.pipe(
     withLatestFrom(state$),
-    mergeMap(([_a, s]) => (s.progress >= DELAY ? of(actionNext()) : EMPTY)),
+    mergeMap(([_, state]) => (state.progress >= DELAY ? of(actionNext()) : EMPTY)),
     take(5)
   );
 
+  /**
+   * Listens to "message" actions and emits the actual actions
+   * that the messages demand.
+   */
   const messageEffect$ = actions$.pipe(
     ofType<ReturnType<typeof actionMessage>>('message'),
     mergeMap((a) => {
