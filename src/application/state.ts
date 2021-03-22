@@ -7,7 +7,7 @@ import { data } from './data';
 import type { Slide, State } from './types';
 
 const DEFAULT_STATE: State = {
-  theme: 'light',
+  theme: 'dark',
   index: 0,
   progress: 0,
   pause: false,
