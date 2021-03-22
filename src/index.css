@@ -40,6 +40,7 @@ body {
 .slide-progress-value {
   height: 4px;
   background-color: #f4b000;
+  transform: scaleX(0);
   transition: transform 0.1s linear;
   transform-origin: left top;
 }
