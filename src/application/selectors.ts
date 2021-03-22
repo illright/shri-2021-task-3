@@ -23,8 +23,7 @@ export const createProgressSelector = (state$: Observable<State>) =>
 export const createCurrentIndexSelector = (state$: Observable<State>) =>
   state$.pipe(
     map((s) => s.index),
-    distinctUntilChanged(),
-    mergeMapTo(EMPTY)
+    distinctUntilChanged()
   );
 
 export const createThemeSelector = (state$: Observable<State>) =>
