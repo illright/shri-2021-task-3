@@ -11,10 +11,10 @@ module.exports = {
     frame: './src/frame.ts',
   },
   devtool: 'inline-source-map',
-  devServer: { contentBase: './dist' },
+  devServer: { contentBase: './dist', writeToDisk: true },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyPlugin({ patterns: ['public'] }),
+    new CopyPlugin({ patterns: ['../task1/public'] }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       chunks: ['index'],

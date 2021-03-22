@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "pnpm run build --dir task1 && pnpm run start --dir task3"
+  },
+  "workspaces": [
+    "task1",
+    "task3"
+  ]
+}
