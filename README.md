@@ -47,22 +47,22 @@
 
 1. Клонировать репозиторий
 
-    ```sh
-    git clone git@github.com:yndx-shri/shri-2021-task-3.git
-    cd shri-2021-task-3
-    ```
+   ```sh
+   git clone git@github.com:yndx-shri/shri-2021-task-3.git
+   cd shri-2021-task-3
+   ```
 
 2. Установить зависимости
 
-    ```sh
-    npm ci
-    ```
+   ```sh
+   npm ci
+   ```
 
 3. Запустить dev-сервер
 
-    ```sh
-    npm start
-    ```
+   ```sh
+   npm start
+   ```
 
 Должен открыться плейер в браузере.
 
