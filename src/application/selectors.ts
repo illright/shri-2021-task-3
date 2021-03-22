@@ -1,6 +1,8 @@
-import { EMPTY, Observable } from 'rxjs';
+import { EMPTY } from 'rxjs';
+import type { Observable } from 'rxjs';
 import { distinctUntilChanged, map, mergeMapTo } from 'rxjs/operators';
-import { DELAY, Slide, State } from './types';
+import { DELAY } from './types';
+import type { Slide, State } from './types';
 
 interface SlideData<T> {
   index: number;

@@ -1,9 +1,10 @@
-import { Subject, BehaviorSubject, Observable } from 'rxjs';
+import { Subject, BehaviorSubject } from 'rxjs';
+import type { Observable } from 'rxjs';
 import { map, withLatestFrom } from 'rxjs/operators';
-import { Action } from './actions';
+import type { Action } from './actions';
 import { createEffects } from './effects';
 import { data } from './data';
-import { Slide, State } from './types';
+import type { Slide, State } from './types';
 
 const DEFAULT_STATE: State = {
   theme: 'light',

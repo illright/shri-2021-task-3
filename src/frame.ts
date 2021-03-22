@@ -1,4 +1,5 @@
-import { messageAction, XMessage } from './messages';
+import { messageAction } from './messages';
+import type { XMessage } from './messages';
 import { setElementTheme } from './application/view';
 import './frame.css';
 

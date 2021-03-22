@@ -1,5 +1,5 @@
-import { XMessage } from '../messages';
-import { SlideTheme } from './types';
+import type { XMessage } from '../messages';
+import type { SlideTheme } from './types';
 
 export const setScale = (el: HTMLDivElement, value: number) => {
   el.style.transform = `scaleX(${value.toFixed(5)})`;

@@ -1,4 +1,4 @@
-import { Slide, SlideTheme } from './types';
+import type { Slide, SlideTheme } from './types';
 
 export const actionSetTheme = (theme: SlideTheme) =>
   ({ type: 'theme', theme } as const);

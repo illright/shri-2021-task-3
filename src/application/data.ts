@@ -1,7 +1,9 @@
-import produce, { Draft } from 'immer';
+import produce from 'immer';
+import type { Draft } from 'immer';
 
-import { Action } from './actions';
-import { INTERVAL, State } from './types';
+import type { Action } from './actions';
+import { INTERVAL } from './types';
+import type { State } from './types';
 
 export const data = produce((draft: Draft<State>, action: Action) => {
   switch (action.type) {

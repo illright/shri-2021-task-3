@@ -1,4 +1,5 @@
-import { messageSetTheme, messageUpdate, XMessage } from './messages';
+import { messageSetTheme, messageUpdate } from './messages';
+import type { XMessage } from './messages';
 
 import {
   actionMessage,
