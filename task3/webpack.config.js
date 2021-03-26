@@ -14,7 +14,7 @@ module.exports = {
   devServer: { contentBase: './dist', writeToDisk: true },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyPlugin({ patterns: ['../task1/public'] }),
+    new CopyPlugin({ patterns: ['../task1/build'] }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       chunks: ['index'],
